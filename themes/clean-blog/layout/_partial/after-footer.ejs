@@ -21,4 +21,10 @@
         (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
     }());
 </script>
+<script>
+// For Drop Caps
+var x= $("article p:eq(0)").text();
+var text='<span class="fChar">'+x.charAt(0)+'</span>';
+$("article p:eq(0)").html(text + x.slice(1,x.length));
+</script>
 <% } %>
