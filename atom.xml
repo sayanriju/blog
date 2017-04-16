@@ -5,7 +5,7 @@
   <link href="/blog/atom.xml" rel="self"/>
   
   <link href="https://github.com/sayanriju/blog/"/>
-  <updated>2017-04-02T08:12:44.499Z</updated>
+  <updated>2017-04-15T15:57:27.416Z</updated>
   <id>https://github.com/sayanriju/blog/</id>
   
   <author>
@@ -16,13 +16,42 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>Building a Simple Bot for Discord</title>
+    <link href="https://github.com/sayanriju/blog/building-bot-for-discord/"/>
+    <id>https://github.com/sayanriju/blog/building-bot-for-discord/</id>
+    <published>2017-04-15T15:57:27.416Z</published>
+    <updated>2017-04-15T15:57:27.416Z</updated>
+    
+    <content type="html"><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>My wife is a dedicated Clash of Clans player. From her, I recently learnt about <a href="https://discordapp.com/" target="_blank" rel="external">Discord</a>, which is a &quot;All-in-one voice and text chat for gamers&quot;. The gamers seem to have built thriving communities on the app, and my wife is an active member in one of them. She was having a chat with one of her fellow community members about getting a bot going which would auto-wish members on their birthdays. Sounded like a nice li'l weekend project for /me!</p>
+<p>A bit of Googling revealed that there are a number of nice libraries to build a bot for Discord, and quite a few for Node.js, the weapon of my choice! I liked <a href="https://github.com/izy521/discord.io">discord.io</a>, &quot;a small, single-file library for creating DiscordApp clients from Node.js&quot;. Coupled with a node scheduler library (I like <a href="https://github.com/rschmukler/agenda">Agenda</a>), I figured the bot can be built quite easily.</p>
+<h2>Before Starting to Code</h2>
+<p>You'll need to register yourself on Discord &amp; login, after which they allow you to create a new &quot;App&quot; inside the <a href="https://discordapp.com/developers/applications/me" target="_blank" rel="external">Developers Section</a>. Once done, you will be given the option to Create a Bot User for this app. Do that and you will have your bot. You need to note down two things here: the <strong>Client ID</strong> and the App Bot User <strong>Token</strong> (click to reveal them). Further, you may tick the Public Bot checkbox. You can also add a cool icon here, which will be the face of your bot.</p>
+<p>Now that you have your app and your bot (a pretty boring one though, since it cannot do a thing yet!), it is a good idea to set up a new Discord Server where you can play around with the bot. The process is as easy as clicking on a + button after logging into Discord. Choose a cool name for your server (mine is called Botyard; ain't that geeky?)</p>
+<p>Next, you need to add your bot to your server. Google says there are a number of ways to do this, but the simplest method for me was visiting https://discordapp.com/oauth2/authorize?client_id=CLIENT_ID&amp;scope=bot&amp;permissions=0 in a new tab while you are logged in and choosing your Server name in the following screen. Remember to replace CLIENT_ID with the one you had jotted down previously.</p>
+<p>And that's about all the bootstrapping you'd need to do before you can start infusing life into your bot, viz. the coding.</p>
+<h2>Coding</h2>
+<p>First things first: make a new directory to hold your code, create an empty <code>index.js</code> file (all our code will be written in this) and run <code>npm init</code> within it. After answering (or skipping) the stock questions, you can go on to install the required dependencies using <code>npm i -S moment agenda discord.io</code></p>
+<p>Now let's just put in the usual skeleton code to load the libraries and all in the <code>index.js</code> file (you have it opened in your favorite editor, right?):</p>
+<p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">const</span> moment = <span class="built_in">require</span>(<span class="string">'moment'</span>)</div><div class="line"></div><div class="line"><span class="keyword">const</span> Agenda = <span class="built_in">require</span>(<span class="string">'agenda'</span>)</div><div class="line"><span class="keyword">const</span> agenda = <span class="keyword">new</span> Agenda(&#123;</div><div class="line">  <span class="attr">db</span>: &#123;<span class="attr">address</span>: process.env.MONGO_CONNECTION_STRING&#125;,</div><div class="line">  <span class="attr">processEvery</span>: <span class="string">'30 minutes'</span></div><div class="line">&#125;);</div><div class="line"></div><div class="line"><span class="keyword">const</span> Discord = <span class="built_in">require</span>(<span class="string">'discord.io'</span>);</div><div class="line"><span class="keyword">const</span> bot = <span class="keyword">new</span> Discord.Client(&#123;</div><div class="line">    <span class="attr">autorun</span>: <span class="literal">true</span>,</div><div class="line">    <span class="attr">token</span>: process.env.BOT_TOKEN</div><div class="line">&#125;);</div></pre></td></tr></table></figure></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css&quot;&gt;&lt;p&gt;My wife is a dedicated Clash of Clans 
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
     <title>Hello World</title>
     <link href="https://github.com/sayanriju/blog/hello-world/"/>
     <id>https://github.com/sayanriju/blog/hello-world/</id>
     <published>2017-04-02T08:12:44.499Z</published>
     <updated>2017-04-02T08:12:44.499Z</updated>
     
-    <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
+    <content type="html"><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
 <h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
 <p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
 <h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
@@ -35,7 +64,7 @@
     
     <summary type="html">
     
-      &lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.
+      &lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css&quot;&gt;&lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot; 
     
     </summary>
     

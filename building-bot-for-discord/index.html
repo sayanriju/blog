@@ -10,6 +10,8 @@
     <meta name="google-site-verification" content="wQlBUOGz8G5GRqb4tuhEIEk4pEDeuJcAqNeteVKTtak" />
     <!--Description-->
     
+        <meta name="description" content="My wife is a dedicated Clash of Clans player. From her, I recently learnt about Discord, which is a &amp;quot;All-in-one voice and text chat for gamers&amp;qu">
+    
 
     <!--Author-->
     
@@ -18,7 +20,7 @@
 
     <!--Open Graph Title-->
     
-        <meta property="og:title" content="Chronicles of My Whims"/>
+        <meta property="og:title" content="Building a Simple Bot for Discord"/>
     
 
     <!--Open Graph Description-->
@@ -29,7 +31,7 @@
 
     <!--Type page-->
     
-        <meta property="og:type" content="website" />
+        <meta property="og:type" content="article" />
     
 
     <!--Page Cover-->
@@ -42,7 +44,7 @@
 
     <!-- Title -->
     
-    <title>Archives: 2017/4 - Chronicles of My Whims</title>
+    <title>Building a Simple Bot for Discord - Chronicles of My Whims</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet"/>
@@ -140,62 +142,82 @@
 </nav>
 
     <!-- Main Content -->
-    
+    <!-- Page Header -->
+<!-- Set your background image for this header in your post front-matter: cover -->
 
-<!-- Page Header -->
-<!-- Set your background image for this header in the theme's configuration: index_cover -->
 <header class="intro-header" style="background-image: url('/blog/img/dali.jpg')">
     <div class="container">
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                <div class="site-heading">
-                    <h1>2017/4</h1>
+                <div class="post-heading">
+                    <h1>Building a Simple Bot for Discord</h1>
+                    
+                    <span class="meta">
+                        <!-- Date and Author -->
+                        
+                        15th April, 2017
+			
+			    &nbsp;-&nbsp;4 min. read
+			
+                    </span>
                 </div>
             </div>
         </div>
     </div>
 </header>
 
-<!-- Main Content -->
-<div class="container">
-    <div class="row">
-        <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+
+            <!-- Tags and categories -->
+           
+
+            <!-- Gallery -->
             
-                <div class="post-preview">
-    <a href="/blog/building-bot-for-discord/">
-        <h1 class="post-title archive">
-            Building a Simple Bot for Discord
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        15th April, 2017
-    </p>
-</div>
+
+            <!-- Post Main Content -->
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>My wife is a dedicated Clash of Clans player. From her, I recently learnt about <a href="https://discordapp.com/" target="_blank" rel="external">Discord</a>, which is a &quot;All-in-one voice and text chat for gamers&quot;. The gamers seem to have built thriving communities on the app, and my wife is an active member in one of them. She was having a chat with one of her fellow community members about getting a bot going which would auto-wish members on their birthdays. Sounded like a nice li'l weekend project for /me!</p>
+<p>A bit of Googling revealed that there are a number of nice libraries to build a bot for Discord, and quite a few for Node.js, the weapon of my choice! I liked <a href="https://github.com/izy521/discord.io">discord.io</a>, &quot;a small, single-file library for creating DiscordApp clients from Node.js&quot;. Coupled with a node scheduler library (I like <a href="https://github.com/rschmukler/agenda">Agenda</a>), I figured the bot can be built quite easily.</p>
+<h2>Before Starting to Code</h2>
+<p>You'll need to register yourself on Discord &amp; login, after which they allow you to create a new &quot;App&quot; inside the <a href="https://discordapp.com/developers/applications/me" target="_blank" rel="external">Developers Section</a>. Once done, you will be given the option to Create a Bot User for this app. Do that and you will have your bot. You need to note down two things here: the <strong>Client ID</strong> and the App Bot User <strong>Token</strong> (click to reveal them). Further, you may tick the Public Bot checkbox. You can also add a cool icon here, which will be the face of your bot.</p>
+<p>Now that you have your app and your bot (a pretty boring one though, since it cannot do a thing yet!), it is a good idea to set up a new Discord Server where you can play around with the bot. The process is as easy as clicking on a + button after logging into Discord. Choose a cool name for your server (mine is called Botyard; ain't that geeky?)</p>
+<p>Next, you need to add your bot to your server. Google says there are a number of ways to do this, but the simplest method for me was visiting https://discordapp.com/oauth2/authorize?client_id=CLIENT_ID&amp;scope=bot&amp;permissions=0 in a new tab while you are logged in and choosing your Server name in the following screen. Remember to replace CLIENT_ID with the one you had jotted down previously.</p>
+<p>And that's about all the bootstrapping you'd need to do before you can start infusing life into your bot, viz. the coding.</p>
+<h2>Coding</h2>
+<p>First things first: make a new directory to hold your code, create an empty <code>index.js</code> file (all our code will be written in this) and run <code>npm init</code> within it. After answering (or skipping) the stock questions, you can go on to install the required dependencies using <code>npm i -S moment agenda discord.io</code></p>
+<p>Now let's just put in the usual skeleton code to load the libraries and all in the <code>index.js</code> file (you have it opened in your favorite editor, right?):</p>
+<p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">const</span> moment = <span class="built_in">require</span>(<span class="string">'moment'</span>)</div><div class="line"></div><div class="line"><span class="keyword">const</span> Agenda = <span class="built_in">require</span>(<span class="string">'agenda'</span>)</div><div class="line"><span class="keyword">const</span> agenda = <span class="keyword">new</span> Agenda(&#123;</div><div class="line">  <span class="attr">db</span>: &#123;<span class="attr">address</span>: process.env.MONGO_CONNECTION_STRING&#125;,</div><div class="line">  <span class="attr">processEvery</span>: <span class="string">'30 minutes'</span></div><div class="line">&#125;);</div><div class="line"></div><div class="line"><span class="keyword">const</span> Discord = <span class="built_in">require</span>(<span class="string">'discord.io'</span>);</div><div class="line"><span class="keyword">const</span> bot = <span class="keyword">new</span> Discord.Client(&#123;</div><div class="line">    <span class="attr">autorun</span>: <span class="literal">true</span>,</div><div class="line">    <span class="attr">token</span>: process.env.BOT_TOKEN</div><div class="line">&#125;);</div></pre></td></tr></table></figure></p>
+
+
+                
+                    <!-- Go to www.addthis.com/dashboard to customize your tools -->
+                    <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=sayanriju"></script>
+
+                    <!-- Go to www.addthis.com/dashboard to customize your tools -->
+                    <div class="addthis_sharing_toolbox"></div>
+                
+            </div>
+
+            <!-- Comments -->
             
-                <div class="post-preview">
-    <a href="/blog/hello-world/">
-        <h1 class="post-title archive">
-            Hello World
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2nd April, 2017
-    </p>
-</div>
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    
+    <hr />
+    <h3>Comments:</h3>
+    <div id="disqus_thread">
+        <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+
+
+
+                </div>
             
-            <div class="archive-before-pagination"></div>
-            <ul class="pager">
-    
-    
-</ul>
         </div>
     </div>
-</div>
-
+</article>
 
 
     <!-- Footer -->
@@ -284,7 +306,7 @@
         var dsq = document.createElement('script');
         dsq.type = 'text/javascript';
         dsq.async = true;
-        dsq.src = '//' + disqus_shortname + '.disqus.com/count.js';
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
         (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
     }());
 </script>
