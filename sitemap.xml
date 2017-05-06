@@ -3,7 +3,17 @@
 
     <sitemap>
         <loc>https://github.com/sayanriju/blog/post-sitemap.xml</loc>
-        <lastmod>2017-04-02T08:12:44.499Z</lastmod>
+        <lastmod>2017-05-06T19:36:02.867Z</lastmod>
+    </sitemap>
+
+    <sitemap>
+        <loc>https://github.com/sayanriju/blog/category-sitemap.xml</loc>
+        <lastmod>2017-05-06T19:36:02.867Z</lastmod>
+    </sitemap>
+
+    <sitemap>
+        <loc>https://github.com/sayanriju/blog/tag-sitemap.xml</loc>
+        <lastmod>2017-05-06T19:36:02.867Z</lastmod>
     </sitemap>
 
 </sitemapindex>

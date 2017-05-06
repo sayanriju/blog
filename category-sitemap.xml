@@ -7,19 +7,17 @@
     </url>
 
     <url>
-        <loc>https://github.com/sayanriju/blog/building-bot-for-discord/</loc>
+        <loc>https://github.com/sayanriju/blog/categories/JavaScript/</loc>
         <lastmod>2017-05-06T19:36:02.867Z</lastmod>
         <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
+        <priority>0.2</priority>
     </url>
 
     <url>
-        <loc>https://github.com/sayanriju/blog/hello-world/</loc>
-        <lastmod>2017-04-02T08:12:44.499Z</lastmod>
+        <loc>https://github.com/sayanriju/blog/categories/JavaScript/Node/</loc>
+        <lastmod>2017-05-06T19:36:02.867Z</lastmod>
         <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
+        <priority>0.2</priority>
     </url>
 
 </urlset>
