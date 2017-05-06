@@ -1,0 +1,10 @@
+
+<%
+    var tags = [];
+    item.tags.forEach(function(tag){
+        tags.push('<a class="label label-default" href="' + config.root + tag.path + '">#' + tag.name + '</a>');
+    });
+%>
+
+<%- tags.join(' ') %>
+

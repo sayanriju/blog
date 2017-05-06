@@ -24,6 +24,11 @@
 			    &nbsp;-&nbsp;<%- readingTime(page.content) %>
 			<% } %>
                     </span>
+		    <div style="padding: 0.75em 0;">
+                    <% if (item.tags && item.tags.length){ %>
+			<%- partial('article-tags-labels', {item: item}) %>
+                    <% } %>
+                    </div>
                 </div>
             </div>
         </div>
@@ -36,19 +41,12 @@
         <div class="row">
 
             <!-- Tags and categories -->
-           <% if (item.categories && item.categories.length || item.tags && item.tags.length) { %>
-                <div class="col-lg-4 col-lg-offset-2 col-md-5 col-md-offset-1 post-tags">
-                    <% if (item.tags && item.tags.length){ %>
-                        <%- partial('article-tags', {item: item}) %>
-                    <% } else { %>
-                        <%- partial('article-categories', {item: item}) %>
-                    <% } %>
+           <% if (item.categories && item.categories.length) { %>
+                <div class="col-lg-4 col-lg-offset-2 col-md-5 col-md-offset-1 post-categories">
+
+                <%- partial('article-categories', {item: item}) %>
                 </div>
-                <div class="col-lg-4 col-md-5 post-categories">
-                    <% if (item.tags && item.tags.length && item.categories && item.categories.length){ %>
-                        <%- partial('article-categories', {item: item}) %>
-                    <% } %>
-                </div>
+
             <% } %>
 
             <!-- Gallery -->
