@@ -7,8 +7,16 @@
     </url>
 
     <url>
+        <loc>https://github.com/sayanriju/blog/Realtime-Chat-with-Express-and-Faye-Bayeux-Protocol/</loc>
+        <lastmod>2017-05-10T14:56:42.824Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
         <loc>https://github.com/sayanriju/blog/building-bot-for-discord/</loc>
-        <lastmod>2017-05-08T17:48:26.862Z</lastmod>
+        <lastmod>2017-05-10T14:50:14.610Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
