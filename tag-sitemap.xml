@@ -2,20 +2,6 @@
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
     <url>
-        <loc>https://github.com/sayanriju/blog/tags/Node-JS/</loc>
-        <lastmod>2017-05-10T14:50:14.610Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>https://github.com/sayanriju/blog/tags/Discord-Bot/</loc>
-        <lastmod>2017-05-10T14:50:14.610Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
         <loc>https://github.com/sayanriju/blog/tags/Express/</loc>
         <lastmod>2017-05-10T14:56:42.824Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -60,6 +46,20 @@
     <url>
         <loc>https://github.com/sayanriju/blog/tags/Bayeux/</loc>
         <lastmod>2017-05-10T14:56:42.824Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://github.com/sayanriju/blog/tags/Node-JS/</loc>
+        <lastmod>2017-05-10T15:02:52.626Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://github.com/sayanriju/blog/tags/Discord-Bot/</loc>
+        <lastmod>2017-05-10T15:02:52.626Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
