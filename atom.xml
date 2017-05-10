@@ -81,8 +81,8 @@
     <title>Building a Simple Bot for Discord</title>
     <link href="https://github.com/sayanriju/blog/building-bot-for-discord/"/>
     <id>https://github.com/sayanriju/blog/building-bot-for-discord/</id>
-    <published>2017-05-05T18:30:00.000Z</published>
-    <updated>2017-05-10T15:02:52.626Z</updated>
+    <published>2017-05-03T18:30:00.000Z</published>
+    <updated>2017-05-10T15:05:05.123Z</updated>
     
     <content type="html"><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>My wife is a dedicated Clash of Clans player. From her, I recently learnt about <a href="https://discordapp.com/" target="_blank" rel="external">Discord</a>, which is a “All-in-one voice and text chat for gamers”. The gamers seem to have built thriving communities on the app, and my wife is an active member in one of them. She was having a chat with one of her fellow community members about getting a bot going which would auto-wish members on their birthdays. Sounded like a nice li’l weekend project for /me!</p>
 <p>A bit of Googling revealed that there are a number of nice libraries to build a bot for Discord, and quite a few for Node.js, the weapon of my choice! I liked <a href="https://github.com/izy521/discord.io">discord.io</a>, “a small, single-file library for creating DiscordApp clients from Node.js”. Coupled with a node scheduler library (I like <a href="https://github.com/rschmukler/agenda">Agenda</a>), I figured the bot can be built quite easily.</p>
