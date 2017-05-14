@@ -1,6 +1,6 @@
 ---
 title: Building a Simple Bot for Discord
-date: 2017/05/06 00:00:00
+date: 2017/05/04 00:00:00
 categories:
 - JavaScript
 - Node
@@ -144,7 +144,7 @@ bot.on('message', function(user, userID, channelID, message, event) {
 
 So, that's about it! You can view the completed code at [Github](https://github.com/sayanriju/boteswar).
 
-To run the code, just clone the repo, `cd` into the directory, run `npm install` and finally issue the command: `MONGO_CONNECTION_STRING="mongodb://<dbuser>:<dbpass>@ds031952.mlab.com:31952/<dbname>" BOT_TOKEN="<your_token>" node index.js`. Obviously, replace the MONGO_CONNECTION_STRING and BOT_TOKEN values with your own.
+To run the code, just clone the repo, `cd` into the directory, run `npm install` and finally issue the command: `MONGO_CONNECTION_STRING="mongodb://<dbuser>:<dbpass>@<dbhost>:<dbport>/<dbname>" BOT_TOKEN="<your_token>" node index.js`. Obviously, replace the MONGO_CONNECTION_STRING and BOT_TOKEN values with your own.
 
 Now you can go to your discord channel and chat around with the bot!
 
