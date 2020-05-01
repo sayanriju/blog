@@ -1,0 +1,18 @@
+# Snyk (https://snyk.io) policy file, patches or ignores known vulnerabilities.
+version: v1.14.1
+ignore: {}
+# patches apply the minimum changes required to fix a vulnerability
+patch:
+  SNYK-JS-LODASH-567746:
+    - hexo > lodash:
+        patched: '2020-05-01T03:46:28.475Z'
+    - hexo-generator-seo-friendly-sitemap > lodash:
+        patched: '2020-05-01T03:46:28.475Z'
+    - hexo > warehouse > lodash:
+        patched: '2020-05-01T03:46:28.475Z'
+    - hexo-renderer-sass > node-sass > lodash:
+        patched: '2020-05-01T03:46:28.475Z'
+    - hexo-renderer-sass > node-sass > sass-graph > lodash:
+        patched: '2020-05-01T03:46:28.475Z'
+    - hexo-renderer-sass > node-sass > gaze > globule > lodash:
+        patched: '2020-05-01T03:46:28.475Z'
