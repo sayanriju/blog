@@ -17,7 +17,7 @@
     "hexo-generator-tag": "^0.2.0",
     "hexo-reading-time": "^1.0.3",
     "hexo-reference": "^1.0.3",
-    "hexo-renderer-ejs": "^0.2.0",
+    "hexo-renderer-ejs": "^2.0.0",
     "hexo-renderer-markdown-it": "^3.4.1",
     "hexo-renderer-marked": "^0.2.10",
     "hexo-renderer-sass": "^0.3.1",
